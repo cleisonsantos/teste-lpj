@@ -9,6 +9,12 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Angular -->
+    <script src="{{ asset('js/angular/angular.min.js') }}"></script>
+    
+    <!-- Meu JS -->
+    <script src="{{ asset('js/index.js') }}"></script>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
