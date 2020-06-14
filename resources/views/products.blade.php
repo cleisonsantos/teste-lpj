@@ -68,7 +68,7 @@
         </div>
     </div>
 </div>
-@selection('js')
+
     <script src="{{ asset('js/products.js') }}"></script>
-@endselection
+
 @endsection

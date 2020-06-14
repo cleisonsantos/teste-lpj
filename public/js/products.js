@@ -84,7 +84,7 @@ angular.module("products").controller("productsController", function ($scope, $h
                 amount: product.amount,
                 price: product.price,
                 description: product.description,
-                category: product.category.id,
+                category: product.category,
             }
         }).then(function (response) {
             // console.log(response.data);
