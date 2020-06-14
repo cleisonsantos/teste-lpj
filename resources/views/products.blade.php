@@ -30,9 +30,9 @@
                                 
                                 </select>
                             </div>
-                            <button class="btn btn-primary my-2 " ng-model="addBtn" ng-click="addProduct(product)" ng-show="edit" ng-disabled="!product.name || !product.amount || !product.price || !product.description || !product.category">Adicionar
+                            <button class="btn btn-primary my-2 " ng-model="addBtn" ng-click="addProduct(product)" ng-show="edit" ng-disabled="!product.name || !product.amount || !product.price || !product.description || !product.category"> <i class="fa fa-save"></i> Adicionar
                                 Produto</button>
-                            <button class="btn btn-primary my-2 " ng-model="editBtn" ng-click="editProduct(product)" ng-show="!edit" ng-disabled="!product.name || !product.description">Editar
+                            <button class="btn btn-primary my-2 " ng-model="editBtn" ng-click="editProduct(product)" ng-show="!edit" ng-disabled="!product.name || !product.description"> <i class="fa fa-edit"></i> Editar
                                 Produto</button>
                         </form>
                     </div>
@@ -58,8 +58,8 @@
                                 <td>R$ %% product.price %%</td>
                                 <td>%% product.description %%</td>
                                 <td>%% showCategory(product.category); %%</td>
-                                <td><button class="btn btn-success" ng-click="editFieldsProducts(product.id)">editar</button></td>
-                                <td><button class="btn btn-danger" ng-click="delProduct(product)">excluir</button></td>
+                                <td><button class="btn btn-success" ng-click="editFieldsProducts(product.id)"> <i class="fa fa-edit"></i> editar</button></td>
+                                <td><button class="btn btn-danger" ng-click="delProduct(product)"> <i class="fa fa-trash"></i> excluir</button></td>
                             </tr>
                         </table>
                     </div>

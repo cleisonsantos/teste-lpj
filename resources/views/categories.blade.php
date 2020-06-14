@@ -17,8 +17,8 @@
                             <input class="col-md-8 col-sm-12 " type="hidden" ng-model="category.id" value="" name="" id="" placeholder="id">
                             <input class="col-md-3 col-sm-12 " type="text" ng-model="category.name" name="" id="" placeholder="Nome">
                             <input class="col-md-8 col-sm-12 " type="text" ng-model="category.description" name="" id="" placeholder="Descrição">
-                            <button class="btn btn-primary my-2 d-block" ng-model="addBtn" ng-click="addCategory(category)" ng-show="edit" ng-disabled="!category.name || !category.description">Adicionar Categoria</button>
-                            <button class="btn btn-primary my-2 d-block" ng-model="editBtn" ng-click="editCategory(category)" ng-show="!edit" ng-disabled="!category.name || !category.description">Editar Categoria</button>
+                            <button class="btn btn-primary my-2 d-block" ng-model="addBtn" ng-click="addCategory(category)" ng-show="edit" ng-disabled="!category.name || !category.description"> <i class="fa fa-save"></i> Adicionar Categoria</button>
+                            <button class="btn btn-primary my-2 d-block" ng-model="editBtn" ng-click="editCategory(category)" ng-show="!edit" ng-disabled="!category.name || !category.description"> <i class="fa fa-edit"></i> Editar Categoria</button>
                         </form>
                     </div>
                     <div class="border-top-1 border-info mt-3">
@@ -37,8 +37,8 @@
                                 <td>%% category.id %%</td>
                                 <td>%% category.name %%</td>
                                 <td>%% category.description %%</td>
-                                <td><button class="btn btn-success" ng-click="editFields(category.id)">editar</button></td>
-                                <td><button class="btn btn-danger" ng-click="delCategory(category)">excluir</button></td>
+                                <td><button class="btn btn-success" ng-click="editFields(category.id)"> <i class="fa fa-edit"></i> editar</button></td>
+                                <td><button class="btn btn-danger" ng-click="delCategory(category)"> <i class="fa fa-trash"></i> excluir</button></td>
                             </tr>
                         </table>
                     </div>
