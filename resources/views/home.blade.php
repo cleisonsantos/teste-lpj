@@ -13,7 +13,7 @@
 
                     <div class="card text-white bg-success mb-3" style="max-width: 15rem;">
                         <div class="card-header">
-                            <h5>Categorias</h5>
+                        <a class="text-light" href="{{ url('/categorias') }}"><h5>Categorias</h5></a>
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">%% categories.length %%</h3>
@@ -22,7 +22,7 @@
 
                     <div class="card text-white bg-primary mb-3" style="max-width: 15rem;">
                         <div class="card-header">
-                            <h5>Produtos</h5>
+                            <a class="text-light" href="{{ url('/produtos') }}"><h5>Produtos</h5></a>
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">%% products.length %%</h3>
