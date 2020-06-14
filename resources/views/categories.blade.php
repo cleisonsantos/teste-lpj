@@ -47,4 +47,7 @@
         </div>
     </div>
 </div>
+@selection('js')
+    <script src="{{ asset('js/categories.js') }}"></script>
+@endselection
 @endsection
