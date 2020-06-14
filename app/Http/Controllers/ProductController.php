@@ -39,7 +39,11 @@ class ProductController extends Controller
     public function edit(Product $product, Request $request)
     {
         $product->name = $request->name;
+        $product->amount = $request->amount;
+        $product->price = $request->price;
         $product->description = $request->description;
+        $product->category = $request->category;
+        $product->user = $request->user;
         $product->save();
     }
     public function destroy(Product $product)
