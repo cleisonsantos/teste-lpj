@@ -15,14 +15,15 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('category');
             $table->string('name');
             $table->bigInteger('amount');
-            $table->decimal('price', 5, 2)->nullable();
+            $table->decimal('price', 8, 2)->nullable();
             $table->text('description')->nullable();
-            $table->string('category');
-            $table->bigInteger('user_id');
-
+            $table->bigInteger('user');
             $table->timestamps();
+
+            $table->foreign('category')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
