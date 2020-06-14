@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('categorias','CategoryController@index')->name('categories');
+Route::get('categorias','CategoryController@index')->name('categories')->middleware('auth');
     
 Route::get('categories', 'CategoryController@show')->name('categories.show');
 
@@ -31,3 +31,14 @@ Route::post('categories', 'CategoryController@store')->name('categories.store');
 Route::put('categories/{category}', 'CategoryController@edit')->name('categories.edit');
     
 Route::delete('categories/{category}', 'CategoryController@destroy')->name('categories.destroy');
+
+
+Route::get('produtos', 'ProductController@index')->name('products')->middleware('auth');
+
+Route::get('products', 'ProductController@show')->name('products.show');
+
+Route::post('products', 'ProductController@store')->name('products.store');
+
+Route::put('products/{product}', 'ProductController@edit')->name('products.edit');
+
+Route::delete('products/{product}', 'ProductController@destroy')->name('products.destroy');

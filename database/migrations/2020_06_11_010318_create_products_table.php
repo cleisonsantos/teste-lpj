@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->bigInteger('user');
             $table->timestamps();
 
+            //Chave extrangeira
             $table->foreign('category')->references('id')->on('categories')->onDelete('cascade');
         });
     }
