@@ -5,16 +5,14 @@ angular.module('categories', [], function ($interpolateProvider) {
 });
 
 
-
-
-
-
-
-
-
-
 //Configuração da interpolação do angular conflitante com o blade do laravel.
 angular.module('products', [], function ($interpolateProvider) {
+    $interpolateProvider.startSymbol('%%');
+    $interpolateProvider.endSymbol('%%');
+});
+
+//Configuração da interpolação do angular conflitante com o blade do laravel.
+angular.module('dashboard', [], function ($interpolateProvider) {
     $interpolateProvider.startSymbol('%%');
     $interpolateProvider.endSymbol('%%');
 });
