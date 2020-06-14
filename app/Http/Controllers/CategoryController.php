@@ -7,10 +7,14 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         return view('categories');
-        
+
     }
     public function show()
     {
@@ -19,7 +23,7 @@ class CategoryController extends Controller
     }
     public function store(Request $request)
     {
-        
+
         $category = new Category();
         $category->name = $request->name;
         $category->description = $request->description;
