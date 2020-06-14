@@ -12,7 +12,7 @@ php artisan key:generate
 ```
 
 ``` 
-php artisan key:migrate
+php artisan migrate
 ```
 
 ``` 
