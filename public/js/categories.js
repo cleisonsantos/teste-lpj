@@ -9,7 +9,7 @@ angular.module("categories").controller("categoriesController", function ($scope
     //função que prepara os campos para realizar alteração das categorias
     $scope.editFields = function (id) {
         var find = $scope.categories.find(e => e.id === id);
-        console.log($scope.category)
+        
         $scope.category.id = find.id;
         $scope.category.name = find.name;
         $scope.category.description = find.description;
@@ -35,7 +35,7 @@ angular.module("categories").controller("categoriesController", function ($scope
             url: "http://localhost:8000/categories"
         }).then(function (response) {
             $scope.categories = response.data;
-            console.log($scope.categories);
+            
 
         }, function (error) {
             console.log(error);
