@@ -12,10 +12,10 @@ php artisan key:generate
 ```
 
 ``` 
-php artisan key:migrate
+php artisan migrate
 ```
 
 ``` 
 npm install
 ```
-
+O framework utilizado no front-end foi o Angularjs, por já ter utilizado algumas vezes, ser bem tranquilo de usar em aplicações deste tipo para fazer as requisições ajax, validar forms e também por ser utilizado pela empresa.
