@@ -9,7 +9,7 @@ angular.module("products").controller("productsController", function ($scope, $h
     $scope.product = [];
     $scope.edit = true;
 
-    //função que prepara os campos para realizar alteração das categorias
+    //função que prepara os campos para realizar alteração do produto
     $scope.editFieldsProducts = function (id) {
         console.log($scope.products);
         var found = $scope.products.find(e => e.id === id);
@@ -18,13 +18,13 @@ angular.module("products").controller("productsController", function ($scope, $h
         $scope.product.name = found.name;
         $scope.product.description = found.description;
         $scope.product.amount = found.amount;
-        $scope.product.price =  parseFloat(found.price);
+        $scope.product.price = parseFloat(found.price);
         $scope.product.category = found.category;
         //console.log($scope.product.category)
         disableBtnAdd();
     };
 
-    //um "interruptor que alterna os botões de cadastro e edição da categoria"
+    //um "interruptor" que alterna os botões de cadastro e edição da produtos
     var disableBtnAdd = function () {
         $scope.edit === true ? $scope.edit = false : $scope.edit = true;
     }
@@ -37,7 +37,7 @@ angular.module("products").controller("productsController", function ($scope, $h
         $scope.product.price = "";
         $scope.product.category = "";
     }
-    $scope.showCategory = function(id){
+    $scope.showCategory = function (id) {
         var found = $scope.categories.find(e => e.id === id);
         return found.name;
     }
@@ -72,7 +72,7 @@ angular.module("products").controller("productsController", function ($scope, $h
 
     };
 
-    //Função que adiciona uma categoria enviando a requisição para o backend
+    //Função que adiciona um produto enviando a requisição para o backend
     $scope.addProduct = function (product) {
         console.log(product);
         $http({
@@ -96,7 +96,7 @@ angular.module("products").controller("productsController", function ($scope, $h
         });
     };
 
-    //Realiza a persistençia das modifições da categoria
+    //Realiza a persistençia das modifições dos produtos
     $scope.editProduct = function (product) {
         $http({
             method: 'PUT',
@@ -119,7 +119,7 @@ angular.module("products").controller("productsController", function ($scope, $h
         });
     };
 
-    //remove uma categoria do banco de dados
+    //remove um produto do banco de dados
     $scope.delProduct = function (product) {
         $http({
             method: 'DELETE',
@@ -134,9 +134,19 @@ angular.module("products").controller("productsController", function ($scope, $h
         });
     };
 
+    $scope.searchProduct = function () {
+        if ($scope.search) {
+            var filtered = $scope.products.filter((e) => e.name.toLowerCase().match($scope.search.toLowerCase()));
+            $scope.products = filtered;
+        } else {
+            loadProducts();
+        }
+
+    }
+
     //Realiza uma busca inicial de categorias
     loadCategories();
     //Carrega os produtos na tela ao entrar
     loadProducts();
-    
+
 });

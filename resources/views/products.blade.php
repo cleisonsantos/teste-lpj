@@ -22,7 +22,6 @@
                                 <input class="col-md-2 col-sm-12 m-1" type="number" name="" id="" ng-model="product.amount" placeholder="Quantidade">
                                 <input class="col-md-2 col-sm-12 m-1" type="number" name="" id="" ng-model="product.price" placeholder="Preço">
                                 <textarea class="col-md col-sm-12 m-1" type="text" ng-model="product.description" name="" id="" placeholder="Descrição" cols="15" rows="3"></textarea>
-                                <!-- <select class="col-md col-sm-12 m-1" type="text" ng-model="product.category" ng-options="category.id as category.name for category in categories track by category.id" name="" id="" > -->
                                 <select class="col-md col-sm-12 m-1" ng-model="product.category" name="" id="" >
                                 <option value="">Selecione uma categoria</option>
                                 
@@ -38,6 +37,8 @@
                     </div>
                     <div class="border-top-1 border-info mt-3">
                         <h5>Lista de Produtos</h5>
+                        <input type="text" class="col-md-3 col-sm-12 m-1" ng-change="searchProduct()" ng-model="search" name="" id="" placeholder="Buscar"> <select class="col-md-3 col-sm-12 m-1" ng-model="categoryFilter" name="" id=""></select>
+                        
                         <table class="table table-striped">
                             <thead>
                                 <tr>
