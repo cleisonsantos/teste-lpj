@@ -7,6 +7,7 @@ angular.module("products").controller("productsController", function ($scope, $h
     $scope.category = [];
     $scope.products = [];
     $scope.product = [];
+    
     $scope.edit = true;
 
     //função que prepara os campos para realizar alteração do produto
@@ -49,7 +50,7 @@ angular.module("products").controller("productsController", function ($scope, $h
             url: "http://localhost:8000/categories"
         }).then(function (response) {
             $scope.categories = response.data;
-            console.log($scope.categories);
+            
 
         }, function (error) {
             console.log(error);
@@ -64,7 +65,7 @@ angular.module("products").controller("productsController", function ($scope, $h
             url: "http://localhost:8000/products"
         }).then(function (response) {
             $scope.products = response.data;
-            console.log($scope.products);
+            // verifyFilteredCategories();
 
         }, function (error) {
             console.log(error);
@@ -143,6 +144,23 @@ angular.module("products").controller("productsController", function ($scope, $h
         }
 
     }
+    // $scope.filterByCategory =  function() {
+        
+    //     if ($scope.categorySelector !== "") {
+            
+    //         $scope.filteredProducts = $scope.products.filter((e) => e.category == $scope.categoryFilter);
+            
+    //         $scope.products = $scope.filteredProducts;
+    //     }
+    //     else {
+    //          loadProducts();
+    //     }
+    // }
+    // var verifyFilteredCategories = function () {
+    //     if($scope.filteredCategories == ""){
+    //     $scope.filteredCategories.push($scope.products);
+    //     }
+    // }
 
     //Realiza uma busca inicial de categorias
     loadCategories();

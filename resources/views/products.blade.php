@@ -13,7 +13,7 @@
                     <div class="">
                         <p ng-bind="Teste"></p>
                         <h5>Cadastrar Produtos</h5>
-                        
+
                         <form class="">
                             <div class="d-flex align-items-md-start justify-content-md-around justify-content-sm-between flex-sm-wrap">
                                 <input type="hidden" ng-model="product.user" ng-init="product.user = {{ $user->id }}" name="" id="">
@@ -22,11 +22,11 @@
                                 <input class="col-md-2 col-sm-12 m-1" type="number" name="" id="" ng-model="product.amount" placeholder="Quantidade">
                                 <input class="col-md-2 col-sm-12 m-1" type="number" name="" id="" ng-model="product.price" placeholder="Preço">
                                 <textarea class="col-md col-sm-12 m-1" type="text" ng-model="product.description" name="" id="" placeholder="Descrição" cols="15" rows="3"></textarea>
-                                <select class="col-md col-sm-12 m-1" ng-model="product.category" name="" id="" >
-                                <option value="">Selecione uma categoria</option>
-                                
-                                <option ng-repeat="category in categories track by category.id" ng-selected="category.id == product.category" value="%%category.id%%">%% category.name %%</option>
-                                
+                                <select class="col-md col-sm-12 m-1" ng-model="product.category" name="" id="">
+                                    <option value="">Selecione uma categoria</option>
+
+                                    <option ng-repeat="category in categories track by category.id" ng-selected="category.id == product.category" value="%%category.id%%">%% category.name %%</option>
+
                                 </select>
                             </div>
                             <button class="btn btn-primary my-2 " ng-model="addBtn" ng-click="addProduct(product)" ng-show="edit" ng-disabled="!product.name || !product.amount || !product.price || !product.description || !product.category"> <i class="fa fa-save"></i> Adicionar
@@ -37,8 +37,13 @@
                     </div>
                     <div class="border-top-1 border-info mt-3">
                         <h5>Lista de Produtos</h5>
-                        <input type="text" class="col-md-3 col-sm-12 m-1" ng-change="searchProduct()" ng-model="search" name="" id="" placeholder="Buscar"> <select class="col-md-3 col-sm-12 m-1" ng-model="categoryFilter" name="" id=""></select>
-                        
+                        <input type="text" class="col-md-3 col-sm-12 m-1" ng-change="searchProduct()" ng-model="search" name="" id="" placeholder="Buscar">
+                        <!-- <select class="col-md-3 col-sm-12 m-1" ng-change="filterByCategory();loadProducts();" ng-model="categoryFilter" name="" id="">
+                            <option value="">Selecione uma categoria</option>
+
+                            <option ng-repeat="category in categories track by category.id" value="%%category.id%%">%% category.name %%</option>
+                        </select> -->
+
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -70,6 +75,6 @@
     </div>
 </div>
 
-    <script src="{{ asset('js/products.js') }}"></script>
+<script src="{{ asset('js/products.js') }}"></script>
 
 @endsection
